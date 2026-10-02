@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BananaTech — Modern Web Platforms, Mobile Apps &amp; Digital Products</title>
+  <meta name="description" content="BananaTech (bananatech.in) designs and builds high-performance web applications, mobile apps, company profiling, and digital products.">
+  <meta name="keywords" content="BananaTech, web development, mobile apps, software products, custom software, executive profiling, bananatech.in">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bananatech.in/">
+  <meta property="og:title" content="BananaTech — Digital Product &amp; Website Studio">
+  <meta property="og:description" content="Engineering high-performance websites, mobile applications, and digital products.">
+  <meta property="og:image" content="assets/images/logo.svg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            banana: {
+              300: '#FDE047',
+              400: '#FACC15',
+              500: '#EAB308',
+            },
+            cyanAccent: '#38BDF8',
+            emeraldAccent: '#10B981',
+            obsidian: '#070A11',
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#070A11] text-slate-100 selection:bg-banana-400 selection:text-slate-950 font-sans antialiased">
+
+  <!-- Minimal Header -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-[#070A11]/85 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center group">
+        <img src="assets/images/logo.svg" alt="BananaTech" class="h-9 sm:h-10 w-auto group-hover:scale-105 transition-transform duration-300">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#services" class="hover:text-banana-400 transition-colors">Services</a>
+        <a href="#capabilities" class="hover:text-banana-400 transition-colors">Capabilities</a>
+        <a href="#process" class="hover:text-banana-400 transition-colors">Process</a>
+        <a href="#why-us" class="hover:text-banana-400 transition-colors">Why BananaTech</a>
+        <a href="#contact" class="hover:text-banana-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center space-x-4">
+        <a href="https://wa.me/917981160755?text=Hi%20BananaTech%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20your%20team" 
+           target="_blank" 
+           class="inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-banana-400 text-slate-950 font-bold text-xs uppercase tracking-wider hover:bg-banana-300 transition-all">
+          Start Project
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-20 bg-slate-950/98 border-b border-slate-800 px-6 py-8 space-y-4 shadow-2xl backdrop-blur-2xl transition-all duration-300">
+      <nav class="flex flex-col space-y-4 text-base font-semibold">
+        <a href="#services" class="mobile-nav-link text-slate-300 hover:text-white">Services</a>
+        <a href="#capabilities" class="mobile-nav-link text-slate-300 hover:text-white">Capabilities</a>
+        <a href="#process" class="mobile-nav-link text-slate-300 hover:text-white">Process</a>
+        <a href="#why-us" class="mobile-nav-link text-slate-300 hover:text-white">Why BananaTech</a>
+        <a href="#contact" class="mobile-nav-link text-banana-400">Contact &amp; Inquiries</a>
+      </nav>
+      <div class="pt-4 border-t border-slate-800 flex flex-col space-y-3">
+        <a href="#contact" class="mobile-nav-link text-center w-full py-3 rounded-xl bg-banana-400 text-slate-950 font-bold">
+          Start a Project
+        </a>
+        <a href="https://wa.me/917981160755" target="_blank" class="text-center w-full py-3 rounded-xl bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20">
+          Chat on WhatsApp (+91 79811 60755)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Clean Minimal Hero -->
+  <section class="relative pt-20 pb-24 lg:pt-32 lg:pb-36 overflow-hidden bg-radial-hero cyber-grid">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-xl mb-8">
+        <span class="live-dot"></span>
+        <span class="text-xs font-medium text-slate-300">Digital Product &amp; Web Development Studio</span>
+        <span class="text-slate-600">|</span>
+        <span id="perf-status" class="text-xs font-mono text-banana-400">Global High-Speed Architecture</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-heading text-white max-w-4xl mx-auto leading-[1.12]">
+        We Build High-Performance 
+        <span class="text-gradient-yellow">Websites</span>, 
+        <span class="text-gradient-cyan">Mobile Apps</span> &amp; Digital Products.
+      </h1>
+
+      <!-- Minimal Subtitle -->
+      <p class="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+        BananaTech designs, engineers, and launches modern web platforms, mobile applications, executive branding profiles, and custom software. Engineered for maximum speed, security, and scalability.
+      </p>
+
+      <!-- Minimal CTAs -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-banana-400 hover:bg-banana-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5">
+          Discuss Your Project &rarr;
+        </a>
+        <a href="#services" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs border border-slate-700 transition-all">
+          Explore Services
+        </a>
+      </div>
+
+      <!-- Minimal Trust Grid -->
+      <div class="mt-16 pt-12 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-left max-w-4xl mx-auto">
+        <div class="glass-panel p-5 rounded-2xl">
+          <p class="text-xl font-extrabold font-heading text-white">Sub-Second</p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Average Load Speed</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <p class="text-xl font-extrabold font-heading text-white">99.99%</p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">High Availability</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <p class="text-xl font-extrabold font-heading text-white">Cross-Platform</p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Web, iOS &amp; Android</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <p class="text-xl font-extrabold font-heading text-white">100% Owned</p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Full IP &amp; Source Code</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Core Services (Balanced & Minimal) -->
+  <section id="services" class="py-24 relative bg-[#090D16] border-t border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-banana-400/10 text-banana-400 border border-banana-400/20">
+          What We Do
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          Complete Digital Solutions for Modern Businesses
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">
+          From full-scale web platforms to native mobile apps and corporate profiling, we engineer software that delivers clarity and reliability.
+        </p>
+      </div>
+
+      <!-- 4 Core Service Cards (Balanced) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- 1: Web Applications & Websites -->
+        <div class="glass-panel p-8 rounded-3xl glass-panel-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-banana-400/10 border border-banana-400/20 flex items-center justify-center text-banana-400 mb-5">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-3">Websites &amp; Web Platforms</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Fast, conversion-focused websites and web systems. Whether it’s healthcare portals with appointment scheduling, restaurant digital ordering systems, or clean corporate hubs, we build clean architectures that load instantly.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-banana-400"></i>
+                <span>Responsive, high-converting design optimized for all screen sizes</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-banana-400"></i>
+                <span>Specialized portals for healthcare, dining, commerce &amp; services</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-banana-400"></i>
+                <span>Zero bloated plugins, 100/100 Core Web Vitals performance</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-800">
+            <a href="#contact" class="text-xs font-bold text-banana-400 hover:text-banana-300 flex items-center space-x-1">
+              <span>Inquire About Web Development &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2: Mobile Applications -->
+        <div class="glass-panel p-8 rounded-3xl glass-panel-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-5">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-3">Mobile Applications</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Cross-platform iOS and Android mobile apps engineered for fluid 60fps performance using Flutter and React Native. Clean state management, offline support, and complete App Store release workflows.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                <span>Single unified codebase for both Apple iOS and Google Play Store</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                <span>Biometric authentication, real-time push alerts, and offline caching</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-sky-400"></i>
+                <span>Seamless backend API and database integration</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-800">
+            <a href="#contact" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center space-x-1">
+              <span>Inquire About Mobile Apps &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3: Custom Digital Products & SaaS MVPs -->
+        <div class="glass-panel p-8 rounded-3xl glass-panel-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-5">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-3">Product Development &amp; MVPs</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Turn your concept into production software. We architect and develop custom SaaS platforms, administrative dashboards, automated workflows, and digital business tools built for scale.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Database architecture with modern PostgreSQL, Supabase, and Redis</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Secure role-based authentication and team permissions</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Payment gateway integration (Stripe, Razorpay, UPI)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-800">
+            <a href="#contact" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center space-x-1">
+              <span>Inquire About Product Development &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4: Executive & Company Profiling -->
+        <div class="glass-panel p-8 rounded-3xl glass-panel-hover flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-5">
+              <i data-lucide="user-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold font-heading text-white mb-3">Executive &amp; Brand Profiling</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              Establish authority and trust with bespoke personal and corporate branding sites. Tailored for founders, executives, doctors, and professionals who need an impeccable digital presence.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-purple-400"></i>
+                <span>Executive storytelling, editorial bio, and digital media kit</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-purple-400"></i>
+                <span>Public speaking, press mentions, and thought leadership showcase</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <i data-lucide="check" class="w-4 h-4 text-purple-400"></i>
+                <span>Search engine schema optimization and Knowledge Graph readiness</span>
+              </li>
+            </ul>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-800">
+            <a href="#contact" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center space-x-1">
+              <span>Inquire About Profiling &rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Capabilities / What We Build -->
+  <section id="capabilities" class="py-24 relative bg-[#070A11]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-banana-400/10 text-banana-400 border border-banana-400/20">
+          Technical Capabilities
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          Engineered for Clean Performance
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base">
+          We combine modern web standards, serverless computing, and minimalist design to build reliable systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="text-banana-400 mb-3"><i data-lucide="zap" class="w-6 h-6"></i></div>
+          <h4 class="text-lg font-bold text-white mb-2">High-Speed Global CDN</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Assets cached globally across distributed edge locations for sub-50ms worldwide response times and zero server hosting waste.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="text-sky-400 mb-3"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+          <h4 class="text-lg font-bold text-white mb-2">Security &amp; Automated SSL</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Enterprise DDoS mitigation, automated TLS/SSL encryption, Content Security Policies, and HSTS headers configured out of the box.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="text-emerald-400 mb-3"><i data-lucide="code-2" class="w-6 h-6"></i></div>
+          <h4 class="text-lg font-bold text-white mb-2">Modern Frameworks</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Built using modern JavaScript, Tailwind CSS, React, Next.js, and Flutter. Clean, readable codebases that your team can scale with ease.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How We Work / Process -->
+  <section id="process" class="py-24 relative bg-[#090D16] border-t border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-banana-400/10 text-banana-400 border border-banana-400/20">
+          Our Process
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          From Concept to Production in 4 Clear Steps
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-panel p-6 rounded-2xl relative">
+          <span class="text-2xl font-black font-mono text-banana-400/30">01</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-2">Scope &amp; Discovery</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            We map out your business goals, target audience, technical specifications, and key features.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl relative">
+          <span class="text-2xl font-black font-mono text-sky-400/30">02</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-2">UI/UX &amp; Wireframes</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Clean, modern interface mockups designed for effortless user experience and conversions.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl relative">
+          <span class="text-2xl font-black font-mono text-emerald-400/30">03</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-2">Development &amp; QA</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Modular engineering with clean code, responsive testing, and performance optimization.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl relative">
+          <span class="text-2xl font-black font-mono text-purple-400/30">04</span>
+          <h4 class="text-base font-bold text-white mt-2 mb-2">Global Launch</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            High-speed production deployment with custom domain DNS setup and automated SSL.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why BananaTech -->
+  <section id="why-us" class="py-24 relative bg-[#070A11]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-banana-400/10 text-banana-400 border border-banana-400/20">
+        Why BananaTech
+      </span>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold font-heading text-white">
+        Built on Modern Engineering Principles
+      </h2>
+      <p class="mt-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+        We prioritize clean engineering and direct communication. No bloated CMS themes with dozens of vulnerable plugins, and no recurring monthly server bills. You own 100% of your source code from day one.
+      </p>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <h4 class="text-sm font-bold text-white mb-2">Zero Server Bloat</h4>
+          <p class="text-xs text-slate-400">Jamstack &amp; static edge deployment eliminates server crashes and heavy hosting fees.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <h4 class="text-sm font-bold text-white mb-2">Full IP Ownership</h4>
+          <p class="text-xs text-slate-400">All repositories, assets, and design files are transferred completely to you.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <h4 class="text-sm font-bold text-white mb-2">Fast Turnaround</h4>
+          <p class="text-xs text-slate-400">Direct engineering communication and focused agile sprints to get you to market quickly.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section (Clean & Minimal) -->
+  <section class="py-20 bg-[#090D16] border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-white">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="glass-panel rounded-2xl border border-white/5 overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-4 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+            <span>What type of projects does BananaTech take on?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-banana-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
+            We specialize in business websites, specialized industry portals (such as healthcare and hospitality), cross-platform mobile apps for iOS and Android, custom web applications, and executive personal brand profiling.
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl border border-white/5 overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-4 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+            <span>What technologies do you use?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-banana-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
+            We work with modern, battle-tested technologies including HTML5, Tailwind CSS, JavaScript, React, Next.js, Flutter (for mobile apps), Supabase, and high-performance serverless cloud infrastructure.
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-2xl border border-white/5 overflow-hidden">
+          <button class="faq-trigger w-full px-6 py-4 text-left flex justify-between items-center text-white font-semibold text-sm sm:text-base focus:outline-none">
+            <span>Do I own the source code upon delivery?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-banana-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
+            Yes, completely. You receive full ownership of the GitHub repository, all code, and assets upon project completion. There are zero licensing traps or proprietary lock-ins.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lead Capture / Contact Section -->
+  <section id="contact" class="py-24 relative bg-[#070A11] border-t border-white/5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-banana-400/10 text-banana-400 border border-banana-400/20">
+          Get In Touch
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          Tell Us About Your Project
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm">
+          Send us a message below or chat directly on WhatsApp. We review all inquiries promptly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Contact Info -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+            <h3 class="text-xl font-bold font-heading text-white">BananaTech</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We design and build clean websites, mobile applications, and software products.
+            </p>
+
+            <div class="space-y-4 text-xs text-slate-300">
+              <div class="flex items-start space-x-3">
+                <i data-lucide="mail" class="w-4 h-4 text-banana-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-slate-500 block text-[11px]">Email</span>
+                  <a href="mailto:admin@bananatech.in" class="hover:underline text-white font-medium">admin@bananatech.in</a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i data-lucide="phone" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-slate-500 block text-[11px]">Phone Numbers</span>
+                  <div class="space-y-0.5 mt-0.5">
+                    <a href="tel:+917981160755" class="hover:underline text-white font-medium block">+91 79811 60755</a>
+                    <a href="tel:+917995332333" class="hover:underline text-white font-medium block">+91 79953 32333</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i data-lucide="linkedin" class="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-slate-500 block text-[11px]">LinkedIn</span>
+                  <a href="https://www.linkedin.com/company/bananatech1" target="_blank" rel="noopener noreferrer" class="hover:underline text-sky-400 font-medium">linkedin.com/company/bananatech1 &rarr;</a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i data-lucide="globe" class="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="text-slate-500 block text-[11px]">Domain</span>
+                  <span class="text-white font-mono">bananatech.in</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800">
+              <a href="https://wa.me/917981160755?text=Hi%20BananaTech%2C%20I%20want%20to%20discuss%20a%20project%20with%20your%20team" 
+                 target="_blank" 
+                 class="w-full py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-xs font-semibold flex items-center justify-center space-x-2 transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Chat on WhatsApp (+91 79811 60755)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 shadow-xl">
+            
+            <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center space-x-3">
+              <i data-lucide="check-circle" class="w-4 h-4 flex-shrink-0"></i>
+              <span>Thank you! Your inquiry has been dispatched to our engineering desk.</span>
+            </div>
+
+            <form id="consultation-form" class="space-y-4">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Name *</label>
+                  <input id="client-name" type="text" required placeholder="Your name" 
+                         class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-white text-xs sm:text-sm focus:outline-none focus:border-banana-400 transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Email *</label>
+                  <input id="client-email" type="email" required placeholder="you@company.com" 
+                         class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-white text-xs sm:text-sm focus:outline-none focus:border-banana-400 transition-colors">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Phone / WhatsApp</label>
+                  <input id="client-phone" type="tel" placeholder="+91 98765 43210" 
+                         class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-white text-xs sm:text-sm focus:outline-none focus:border-banana-400 transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Project Type *</label>
+                  <select id="client-service" class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-white text-xs sm:text-sm focus:outline-none focus:border-banana-400 transition-colors">
+                    <option value="Website & Web Application">Website &amp; Web Platform</option>
+                    <option value="Mobile Application (iOS/Android)">Mobile Application (iOS &amp; Android)</option>
+                    <option value="Custom Digital Product / MVP">Custom SaaS / Product MVP</option>
+                    <option value="Executive & Brand Profiling">Executive &amp; Corporate Profiling</option>
+                    <option value="Other Project">Other / General Consultation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">Project Scope / Brief</label>
+                <textarea id="client-notes" rows="4" placeholder="Tell us briefly about what you are looking to build..." 
+                          class="w-full bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-white text-xs sm:text-sm focus:outline-none focus:border-banana-400 transition-colors"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-banana-400 hover:bg-banana-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all">
+                Send Project Inquiry &rarr;
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer class="bg-[#05070D] border-t border-white/10 py-12 text-slate-400 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-3">
+          <img src="assets/images/logo.svg" alt="BananaTech" class="h-8 w-auto">
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <a href="#services" class="hover:text-banana-400 transition-colors">Services</a>
+          <a href="#capabilities" class="hover:text-banana-400 transition-colors">Capabilities</a>
+          <a href="#process" class="hover:text-banana-400 transition-colors">Process</a>
+          <a href="#why-us" class="hover:text-banana-400 transition-colors">Why BananaTech</a>
+          <a href="#contact" class="hover:text-banana-400 transition-colors">Contact</a>
+          <a href="https://www.linkedin.com/company/bananatech1" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 flex items-center space-x-1 font-medium">
+            <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-500 text-[11px]">
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="mailto:admin@bananatech.in" class="hover:text-slate-300 transition-colors">admin@bananatech.in</a>
+          <span>•</span>
+          <a href="tel:+917981160755" class="hover:text-slate-300 transition-colors">+91 79811 60755</a>
+          <span>•</span>
+          <a href="tel:+917995332333" class="hover:text-slate-300 transition-colors">+91 79953 32333</a>
+        </div>
+        <p class="font-mono">&copy; 2026 BananaTech (bananatech.in). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky Action Button (WhatsApp) -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <a href="https://wa.me/917981160755?text=Hello%20BananaTech%2C%20I%20am%20interested%20in%20discussing%20a%20project." 
+       target="_blank" 
+       class="flex items-center space-x-2 px-4 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold shadow-xl transition-all transform hover:scale-105 border border-emerald-300/30">
+      <i data-lucide="message-circle" class="w-4 h-4 text-slate-950"></i>
+      <span class="text-xs">Chat on WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
